@@ -6,3 +6,8 @@
     background-color: indigo;
     color: whitesmoke;
 }
+
+.fakeimg {
+    height: 200px;
+    background: #aaa;
+}
