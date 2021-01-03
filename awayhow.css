@@ -7,6 +7,10 @@
     border-color:purple !important;
 }
 
+.awhColorDark {
+    color: purple;
+}
+
 .awhBGdark {
     background-color: purple;
     color: whitesmoke;
