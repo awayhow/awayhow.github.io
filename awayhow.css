@@ -1,4 +1,8 @@
-.awhColor {
+body {
+    background-color: violet;
+}
+
+.awhColorDark {
     background-color: indigo;
     color: whitesmoke;
 }
