@@ -2,8 +2,13 @@
     background-color: violet;
 } */
 
-.awhColorDark {
-    background-color: indigo;
+.awhContainer {
+    border-width:3px !important; 
+    border-color:purple !important;
+}
+
+.awhBGdark {
+    background-color: purple;
     color: whitesmoke;
 }
 
