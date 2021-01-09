@@ -17,9 +17,9 @@ class Hello extends React.Component {
     }
     render() {
         if (this.state.isLoggedIn) {
-            return e('button', { class: "awhColorDark", onClick: this.handleLogoutClick }, 'Logout');
+            return e('a', { class: "nav-link", onClick: this.handleLogoutClick }, 'Logout');
         } else {
-            return e('button', { class: "awhColorDark", onClick: this.handleLoginClick }, 'Login');
+            return e('a', { class: "nav-link", onClick: this.handleLoginClick }, 'Login');
         }
     }
 }
