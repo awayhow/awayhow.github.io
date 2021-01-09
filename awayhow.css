@@ -11,6 +11,10 @@
     color: purple;
 }
 
+.awhPointer {
+    cursor: pointer;
+}
+
 .awhBGdark {
     background-color: purple;
     color: whitesmoke;
