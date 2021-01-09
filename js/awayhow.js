@@ -2,7 +2,7 @@
 
 const e = React.createElement;
 
-class Hello extends React.Component {
+class loginHandler extends React.Component {
     constructor(props) {
         super(props);
         this.handleLoginClick = this.handleLoginClick.bind(this);
@@ -25,6 +25,6 @@ class Hello extends React.Component {
 }
 
 ReactDOM.render(
-    e(Hello, null), 
+    e(loginHandler, null), 
     document.getElementById('loginHandler')
 );
