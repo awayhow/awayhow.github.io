@@ -1,33 +1,81 @@
 'use strict';
 
-const e = React.createElement;
-
-class myContainer extends React.Component {
+class LoginControl extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { liked: false };
+        this.handleLoginClick = this.handleLoginClick.bind(this);
+        this.handleLogoutClick = this.handleLogoutClick.bind(this);
+        this.state = {isLoggedIn: false};
     }
-
+    handleLoginClick() {
+        this.setState({isLoggedIn: true});
+    }
+    handleLogoutClick() {
+        this.setState({isLoggedIn: false});
+    }
     render() {
-        if (this.state.liked) {
-            return 'You liked comment number ' + this.props.commentID;
+        const isLoggedIn = this.state.isLoggedIn;
+        let button;
+        if (isLoggedIn) {
+            button = <LogoutButton onClick={this.handleLogoutClick} />;
+        } else {
+            button = <LoginButton onClick={this.handleLoginClick} />;
         }
-
-        return e(
-            'button',
-            { onClick: () => this.setState({ liked: true }) },
-            'Like'
+        return (
+            <div>
+                <Greeting isLoggedIn={isLoggedIn} />
+                {button}
+            </div>
         );
     }
 }
 
-// Find all DOM containers, and render Like buttons into them.
-document.querySelectorAll('.myContainer')
-    .forEach(domContainer => {
-        // Read the comment ID from a data-* attribute.
-        const commentID = parseInt(domContainer.dataset.commentid, 10);
-        ReactDOM.render(
-            e(myContainer, { commentID: commentID }),
-            domContainer
-        );
-    });
+function Greeting(props) {
+    const isLoggedIn = props.isLoggedIn;
+    if (isLoggedIn) {
+        return <UserGreeting />;
+    }
+    return <GuestGreeting />;
+}
+  
+function UserGreeting(props) {
+    return <h1>Welcome back!</h1>;
+}
+  
+function GuestGreeting(props) {
+    return <h1>Please sign up.</h1>;
+}
+
+function LoginButton(props) {
+    return (
+        <button onClick={props.onClick}>
+            Login
+        </button>
+    );
+}
+  
+function LogoutButton(props) {
+    return (
+        <button onClick={props.onClick}>
+            Logout
+        </button>
+    );
+}
+
+ReactDOM.render(
+    // Intentar cambiando isLoggedIn={true}:
+    <Greeting isLoggedIn={false} />,
+    <LoginControl />,
+    document.getElementById('root')
+);
+
+// // Find all DOM containers, and render Like buttons into them.
+// document.querySelectorAll('.myContainer')
+//     .forEach(domContainer => {
+//         // Read the comment ID from a data-* attribute.
+//         const commentID = parseInt(domContainer.dataset.commentid, 10);
+//         ReactDOM.render(
+//             e(myContainer, { commentID: commentID }),
+//             domContainer
+//         );
+//     });
