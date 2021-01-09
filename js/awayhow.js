@@ -63,10 +63,8 @@ function LogoutButton(props) {
 }
 
 ReactDOM.render(
-    // Intentar cambiando isLoggedIn={true}:
-    <Greeting isLoggedIn={false} />,
     <LoginControl />,
-    document.getElementById('root')
+    document.getElementById('LoginControl')
 );
 
 // // Find all DOM containers, and render Like buttons into them.
