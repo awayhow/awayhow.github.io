@@ -1,7 +1,20 @@
 <div id="cookConsMan"></div>
 <script>
+    'use strict';
+
     if (!GetCookieConsent()) {
         cookConsManEl = document.getElementById("cookConsMan");
         cookConsManEl.innerHTML = "Manage Cookie Consent";
     }
+ 
+    function GetCookieConsent() {
+        if (!localStorage.getItem('cookieConsent')) {
+            localStorage.setItem('cookieConsent', "false");
+        }
+        if (localStorage.getItem('cookieConsent') == "false") {
+            return false;
+        } else {
+            return true;
+        }
+    }    
 </script>
