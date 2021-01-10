@@ -27,17 +27,12 @@ class loginHandler extends React.Component {
 class menuOptHandler extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
-        this.state = {isSelected: false};
-    }
-    handleClick() {
-        this.setState({isSelected: true});
     }
     render() {
-        if (this.state.isSelected) {
-            return e('a', { class: "nav-link active awhPointer", onClick: this.handleClick, href: this.props.href }, this.props.label);
+        if (location.pathname == this.props.href) {
+            return e('a', { class: "nav-link active awhPointer", href: this.props.href }, this.props.label);
         } else {
-            return e('a', { class: "nav-link awhPointer", onClick: this.handleClick, href: this.props.href }, this.props.label);
+            return e('a', { class: "nav-link awhPointer", href: this.props.href }, this.props.label);
         }
     }
 }
