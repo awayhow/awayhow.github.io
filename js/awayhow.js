@@ -7,16 +7,19 @@ class loginHandler extends React.Component {
         super(props);
         this.handleLoginClick = this.handleLoginClick.bind(this);
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
-        this.state = {isLoggedIn: false};
+        // this.state = {isLoggedIn: false};
     }
     handleLoginClick() {
-        this.setState({isLoggedIn: true});
+        // this.setState({isLoggedIn: true});
+        localStorage.setItem('loginHandler', true);
     }
     handleLogoutClick() {
-        this.setState({isLoggedIn: false});
+        // this.setState({isLoggedIn: false});
+        localStorage.setItem('loginHandler', false);
     }
     render() {
-        if (this.state.isLoggedIn) {
+        // if (this.state.isLoggedIn) {
+        if (localStorage.getItem('loginHandler') == true) {
             return e('a', { class: "nav-link awhPointer", onClick: this.handleLogoutClick }, 'Logout');
         } else {
             return e('a', { class: "nav-link awhPointer", onClick: this.handleLoginClick }, 'Login');
