@@ -2,5 +2,14 @@
     "manifest_version": 2, 
     "name": "A>Way>How Web",
     "version": "1.0", 
-    "description": "Tool for Business Central that allows you to design, document and monitor your business processes"
+    "description": "Tool for Business Central that allows you to design, document and monitor your business processes",
+    "icons": [
+        {
+          "src": "/images/maskable_icon_x1.png",
+          "type": "image/png",
+          "sizes": "133x133"
+        }
+      ],
+      "start_url": "/index.html",
+      "display": "standalone"    
 }
