@@ -1,0 +1,7 @@
+<div id="cookConsMan"></div>
+<script>
+    if (!GetCookieConsent()) {
+        cookConsManEl = document.getElementById("cookConsMan");
+        cookConsManEl.innerHTML = "Manage Cookie Consent";
+    }
+</script>
