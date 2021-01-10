@@ -24,7 +24,26 @@ class loginHandler extends React.Component {
     }
 }
 
+class menuOptHandler extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return e('a', { class: "nav-link awhPointer", href: this.props.href }, this.props.label);
+    }
+}
+
 ReactDOM.render(
     e(loginHandler, null), 
     document.getElementById('loginHandler')
 );
+
+document.querySelectorAll('#menuOptHandler')
+    .forEach(domContainer => {
+        const href = domContainer.dataset.href;
+        const label = domContainer.dataset.text;
+        ReactDOM.render(
+            e(menuOptHandler, { href: href, label: label }), 
+            domContainer
+        )
+    });
