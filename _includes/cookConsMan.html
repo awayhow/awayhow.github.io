@@ -3,8 +3,7 @@
     'use strict';
 
     if (!GetCookieConsent()) {
-        cookConsManEl = document.getElementById("cookConsMan");
-        cookConsManEl.innerHTML = "Manage Cookie Consent";
+        document.getElementById("cookConsMan").innerHTML = "Manage Cookie Consent";
     }
  
     function GetCookieConsent() {
