@@ -7,14 +7,14 @@ class loginHandler extends React.Component {
         super(props);
         this.handleLoginClick = this.handleLoginClick.bind(this);
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
-        // this.state = {isLoggedIn: false};
+        this.state = {isLoggedIn: false};
     }
     handleLoginClick() {
-        // this.setState({isLoggedIn: true});
+        this.setState({isLoggedIn: true});
         sessionStorage.setItem('loginHandler', "true");
     }
     handleLogoutClick() {
-        // this.setState({isLoggedIn: false});
+        this.setState({isLoggedIn: false});
         sessionStorage.setItem('loginHandler', "false");
     }
     render() {
