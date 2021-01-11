@@ -1,8 +1,8 @@
-<div id="cookConsMan">
+<!-- <div id="cookConsMan">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
         Launch static backdrop modal
     </button>  
-</div>
+</div> -->
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -28,13 +28,14 @@
 <script>
     'use strict';
 
-    document.getElementById("cookConsMan").style.display = "none";
+    // document.getElementById("cookConsMan").style.display = "none";
     if (!GetCookieConsent()) {
         // document.getElementById("cookConsMan").innerHTML = "Manage Cookie Consent";
-        document.getElementById("cookConsMan").style.display = "block";
+        // document.getElementById("cookConsMan").style.display = "block";
         // var attr = document.getElementById("staticBackdrop").attributes;
         // if (attr['aria-hidden'].value == "true")
         // document.getElementById("staticBackdrop").setAttribute("aria-hidden", "false");
+        $('#staticBackdrop').modal();
     }
  
     function GetCookieConsent() {
@@ -46,5 +47,9 @@
         } else {
             return true;
         }
-    }    
+    }
+
+    $('#staticBackdrop').on('hidden.bs.modal', function (e) {
+        alert('Se ha cerrado');
+    })    
 </script>
